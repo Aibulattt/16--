@@ -2,7 +2,6 @@ import React from 'react';
 
  const ListComments = (props) => {
      const {commentsList, deleteComment, addLike, addDislike} = props;
-     console.log(commentsList)
     return (
         <div>
             <h1>Комментарии</h1>
@@ -28,7 +27,7 @@ import React from 'react';
                             <button
                                 className='like-btn'
                                 onClick={() => {
-                                    addLike(comment.counterLikes);
+                                    addLike(comment.id, comment.counterLikes);
                                 }}
                             >
                                 {comment.counterLikes}

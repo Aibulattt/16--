@@ -1,5 +1,5 @@
-let nextId = 2;
-let like = 0;
+// let nextId = 2;
+const uuid =()=>([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,c=>(c^crypto.getRandomValues(new Uint8Array(1))[0]&15 >> c/4).toString(16));
 
 export const addComment = (author, text) => {
     return{
@@ -9,7 +9,7 @@ export const addComment = (author, text) => {
         date: new Date().toLocaleString(),
         counterLikes: 0,
         counterDislikes: 0,
-        id: nextId++
+        id: uuid()
     }
 }
 
@@ -21,17 +21,17 @@ export const deleteComment = (id) => {
     }
 }
 
-export const addLike = (counterLikes) => {
-    console.log('like')
+export const addLike = (id,counterLikes) => {
     return {
         type: 'ADD_LIKE',
-        counterLikes: counterLikes
+        id: id,
+        counterLikes: counterLikes++
     }
 }
 
-export const addDislike = () => {
+export const addDislike = (id) => {
     return {
         type: 'ADD_DISLIKE',
-
+        id
     }
 }

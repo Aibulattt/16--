@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addComment: (author, text, date, id) => dispatch(addComment(author, text, date, id)),
         deleteComment: (id) => dispatch(deleteComment(id)),
-        addLike: (counterLikes) => dispatch(addLike(counterLikes)),
+        addLike: (id, counterLikes) => dispatch(addLike(id, counterLikes)),
         addDislike: () => dispatch(addDislike())
     }
 }

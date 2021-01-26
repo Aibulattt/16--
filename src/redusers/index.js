@@ -11,10 +11,11 @@ const comment = (state=[], action) => {
             return state.filter(comment => comment.id !== action.id)
 
         case 'ADD_LIKE':
-            console.log('like')
-            return[
-                {author: action.author, text: action.text, id:action.id, counterLike: action.counterLikes+1, counterDislikes: +1}
-            ]
+            return state.forEach((comment) => {
+                if(comment.id === action.id) {
+                    comment.counterLikes = comment.counterLikes + 1;
+                }
+            })
 
         case 'ADD_DISLIKE':
             return [
