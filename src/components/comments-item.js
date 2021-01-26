@@ -2,12 +2,12 @@ import React from 'react';
 
  const ListComments = (props) => {
      const {commentsList, deleteComment, addLike, addDislike} = props;
-     console.log(commentsList);
+     console.log(commentsList)
     return (
         <div>
             <h1>Комментарии</h1>
             <ul className='list-comments'>   
-            { commentsList.map(comment => {
+                { commentsList.map((comment) => {
                 return(
                     <li
                     key={comment.id}
@@ -29,7 +29,6 @@ import React from 'react';
                                 className='like-btn'
                                 onClick={() => {
                                     addLike(comment.counterLikes);
-                                    // localStorage.setItem('likes', JSON.stringify(counterLikes+1))
                                 }}
                             >
                                 {comment.counterLikes}
@@ -38,8 +37,6 @@ import React from 'react';
                                 className='dislike-btn'
                                 onClick={() => {
                                     addDislike();
-                                        // localStorage.setItem('dislikes', JSON.stringify(counterDislikes+1))
-
                                 }}
                             >
                                 {comment.counterDislikes}

@@ -44,7 +44,10 @@ export default class AddComment extends React.Component {
                         <div className={className}>
                             <h2>Error: The input field should not be empty</h2>
                             <button
-                                onClick={()=>{this.closeMessage()}}
+                                onClick={(ev)=>{
+                                    ev.preventDefault();
+                                    this.closeMessage()
+                                }}
                             >
                                 Close
                             </button>

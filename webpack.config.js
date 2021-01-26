@@ -13,7 +13,7 @@ module.exports = {
         publicPath: ''
     },
     devServer: {
-        port: 8209,
+        port: 8080,
         historyApiFallback: true,
         hot: true,
     },
