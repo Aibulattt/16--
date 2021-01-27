@@ -35,7 +35,7 @@ import React from 'react';
                             <button
                                 className='dislike-btn'
                                 onClick={() => {
-                                    addDislike();
+                                    addDislike(comment.id, comment.counterLikes);
                                 }}
                             >
                                 {comment.counterDislikes}

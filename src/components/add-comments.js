@@ -34,13 +34,13 @@ export default class AddComment extends React.Component {
         this.setState({isActive: false});
     }
 
-
-
     render() {
         const className = this.state.isActive ? 'show-message' : 'hide-message';
         return (
                 <div>
-                    <form className='form'>
+                    <form className='form'
+                    onSubmit={() => {this.checkInput();return false}}
+                    >
                         <div className={className}>
                             <h2>Error: The input field should not be empty</h2>
                             <button
@@ -61,6 +61,7 @@ export default class AddComment extends React.Component {
                         <input
                             className='input'
                             placeholder='Имя'
+                            required={true}
                             id='author'
                             type='text'
                             value = {this.state.inputValue}
@@ -73,6 +74,7 @@ export default class AddComment extends React.Component {
                             Введите текст комментария
                         </label>
                         <textarea
+                            required={true}
                             className='input-text'
                             id='text'
                             onChange={(ev) => this.setState({textareaValue: ev.target.value})}
@@ -81,6 +83,7 @@ export default class AddComment extends React.Component {
                          </textarea>
                         <button
                             className='btn-add'
+                            type='submit'
                             onClick={(ev) => {
                                 ev.preventDefault();
                                 this.checkInput();
