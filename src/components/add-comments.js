@@ -23,6 +23,7 @@ export default class AddComment extends React.Component {
         }
         else {
             this.addComment(this.state.inputValue, this.state.textareaValue);
+            alert('Комментарий добавлен')
         };
     }
 
@@ -33,6 +34,7 @@ export default class AddComment extends React.Component {
     closeMessage() {
         this.setState({isActive: false});
     }
+
 
     render() {
         const className = this.state.isActive ? 'show-message' : 'hide-message';
@@ -61,7 +63,6 @@ export default class AddComment extends React.Component {
                         <input
                             className='input'
                             placeholder='Имя'
-                            required={true}
                             id='author'
                             type='text'
                             value = {this.state.inputValue}
@@ -74,7 +75,6 @@ export default class AddComment extends React.Component {
                             Введите текст комментария
                         </label>
                         <textarea
-                            required={true}
                             className='input-text'
                             id='text'
                             onChange={(ev) => this.setState({textareaValue: ev.target.value})}
@@ -84,12 +84,12 @@ export default class AddComment extends React.Component {
                         <button
                             className='btn-add'
                             type='submit'
-                            onClick={(ev) => {
-                                ev.preventDefault();
-                                this.checkInput();
-                                this.state.inputValue ='';this.state.textareaValue = '';
-                                }
-                            }
+                            // onClick={(ev) => {
+                            //     // ev.preventDefault();
+                            //     this.checkInput();
+                            //     this.state.inputValue ='';this.state.textareaValue = '';
+                            //     }
+                            // }
                         >
                             Добавить комментарий
                         </button>
