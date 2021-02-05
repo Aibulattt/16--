@@ -15,8 +15,6 @@ const initialState = [
             author: 'Name Author',
             text: 'Text comment',
             date: new Date().toLocaleString(),
-            counterLikes: 0,
-            counterDislikes: 0,
             id: uuid()
         }
 ]

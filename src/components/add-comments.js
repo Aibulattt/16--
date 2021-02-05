@@ -41,7 +41,6 @@ export default class AddComment extends React.Component {
         return (
                 <div>
                     <form className='form'
-                    onSubmit={() => {this.checkInput();return false}}
                     >
                         <div className={className}>
                             <h2>Error: The input field should not be empty</h2>
@@ -84,12 +83,12 @@ export default class AddComment extends React.Component {
                         <button
                             className='btn-add'
                             type='submit'
-                            // onClick={(ev) => {
-                            //     // ev.preventDefault();
-                            //     this.checkInput();
-                            //     this.state.inputValue ='';this.state.textareaValue = '';
-                            //     }
-                            // }
+                            onClick={(ev) => {
+                                ev.preventDefault();
+                                this.checkInput();
+                                this.state.inputValue ='';this.state.textareaValue = '';
+                                }
+                            }
                         >
                             Добавить комментарий
                         </button>

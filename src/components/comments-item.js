@@ -1,7 +1,7 @@
 import React from 'react';
 
  const ListComments = (props) => {
-     const {commentsList, deleteComment, addLike, addDislike} = props;
+     const {commentsList, deleteComment} = props;
     return (
         <div>
             <h1>Комментарии</h1>
@@ -23,22 +23,6 @@ import React from 'react';
                                 }
                             }
                             >Удалить
-                            </button>
-                            <button
-                                className='like-btn'
-                                onClick={() => {
-                                    addLike(comment.id, comment.counterLikes);
-                                }}
-                            >
-                                {comment.counterLikes}
-                            </button>
-                            <button
-                                className='dislike-btn'
-                                onClick={() => {
-                                    addDislike(comment.id, comment.counterLikes);
-                                }}
-                            >
-                                {comment.counterDislikes}
                             </button>
                         </div>
                     </li>
